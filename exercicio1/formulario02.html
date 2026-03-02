@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício Prático 02 - Sistema de Gestão Acadêmica</title>
+</head>
+<body>
+
+    <form action="/action_page.html">
+        <fieldset>
+            <legend><strong>Sistema de Gestão Acadêmica</strong></legend>
+
+            <h3>Manutenção de Usuários do Sistema Interno</h3>
+
+            <p>
+                <label for="login">Login:</label><br>
+                <input type="text" id="login" name="login">
+            </p>
+
+            <p>
+                <label for="senha">Senha:</label><br>
+                <input type="password" id="senha" name="senha">
+            </p>
+
+            <p>
+                <label for="status"><strong>Status:</strong></label><br>
+                <select name="status" id="status">
+                    <option value="inativo">Inativo</option>
+                    <option value="ativo">Ativo</option>
+                </select>
+            </p>
+
+            <p><strong>Tipo:</strong><br>
+                <input type="radio" id="tecnico" name="tipo" value="tecnico">
+                <label for="tecnico">Técnico</label>
+                
+                <input type="radio" id="professor" name="tipo" value="professor">
+                <label for="professor">Professor</label>
+                
+                <input type="radio" id="aluno" name="tipo" value="aluno">
+                <label for="aluno">Aluno</label>
+            </p>
+
+            <p>
+                <label for="data_criacao"><strong>Data Criação:</strong></label><br>
+                <input type="date" id="data_criacao" name="data_criacao">
+            </p>
+
+            <p><strong>Perfil:</strong><br>
+                <input type="radio" id="convidado" name="perfil" value="convidado">
+                <label for="convidado">Convidado</label>
+                
+                <input type="radio" id="admin" name="perfil" value="admin">
+                <label for="admin">Administrador</label>
+            </p>
+
+            <p>
+                <label for="obs"><strong>Observações:</strong></label><br>
+                <textarea id="obs" name="obs" rows="4" cols="40"></textarea>
+            </p>
+
+            <p><strong>Módulos:</strong><br>
+                <input type="checkbox" id="compras" name="modulos" value="compras">
+                <label for="compras">Compras</label>
+                
+                <input type="checkbox" id="biblioteca" name="modulos" value="biblioteca">
+                <label for="biblioteca">Biblioteca</label>
+                
+                <input type="checkbox" id="academico" name="modulos" value="academico">
+                <label for="academico">Acadêmico</label><br>
+                
+                <input type="checkbox" id="doc" name="modulos" value="documentacao">
+                <label for="doc">Documentação</label>
+                
+                <input type="checkbox" id="rh" name="modulos" value="rh">
+                <label for="rh">Recursos Humanos</label>
+            </p>
+
+            <p>
+                <button type="submit">Salvar</button>
+                <button type="reset">Excluir</button>
+            </p>
+
+        </fieldset>
+    </form>
+
+</body>
+</html>

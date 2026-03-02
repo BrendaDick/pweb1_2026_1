@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha Cadastral</title>
+</head>
+<body>
+
+    <center>
+        <form action="sucesso.html" method="GET">
+            
+            <fieldset style="width: 550px;">
+                
+                <legend align="center">
+                    <h2>Ficha Cadastral</h2>
+                </legend>
+
+                <table width="500" border="0" cellspacing="1" cellpadding="1">
+                    
+                    <tr>
+                        <td align="right"><font face="Arial" size="2">Nome:</font></td>
+                        <td colspan="3">
+                            <input type="text" name="nome" size="55" maxlength="55" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><font face="Arial" size="2">RG:</font></td>
+                        <td>
+                            <input type="text" name="rg" size="13" maxlength="13" required>
+                        </td>
+                        <td align="right"><font face="Arial" size="2">C.P.F.:</font></td>
+                        <td>
+                            <input type="text" name="cpf" size="13" maxlength="13" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><font face="Arial" size="2">Endereço:</font></td>
+                        <td colspan="3">
+                            <input type="text" name="endereco" size="55" maxlength="55" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><font face="Arial" size="2">Sexo:</font></td>
+                        <td>
+                            <select name="sexo" required>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                            </select>
+                        </td>
+                        <td align="right"><font face="Arial" size="2">Data Nascimento:</font></td>
+                        <td>
+                            <input type="text" name="data_nasc" size="13" maxlength="13" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><font face="Arial" size="2">Situação Civil</font></td>
+                        <td colspan="3">
+                            <input type="radio" id="solteiro" name="civil" value="solteiro" required>
+                            <label for="solteiro"><font face="Arial" size="2">Solteiro(a)</font></label>
+                            
+                            <input type="radio" id="casado" name="civil" value="casado">
+                            <label for="casado"><font face="Arial" size="2">Casado(a)</font></label>
+                            
+                            <input type="radio" id="viuvo" name="civil" value="viuvo">
+                            <label for="viuvo"><font face="Arial" size="2">Viúvo(a)</font></label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" align="center">
+                            <br>
+                            <input type="reset" value="Limpar Dados">
+                            <input type="submit" value="Enviar Dados">
+                        </td>
+                    </tr>
+
+                </table>
+            </fieldset>
+        </form>
+    </center>
+
+</body>
+</html>

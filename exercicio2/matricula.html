@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrícula Escolar - Ensino Médio</title>
+</head>
+<body>
+
+    <form action="sucesso.html" method="GET">
+        <fieldset>
+            <legend><strong>Formulário de Matrícula de Alunos</strong></legend>
+
+            <p>
+                <label for="nome">Nome do Aluno:</label><br>
+                <input type="text" id="nome" name="nome" maxlength="50" required>
+            </p>
+
+            <p>
+                <label for="nascimento">Data de Nascimento:</label><br>
+                <input type="date" id="nascimento" name="nascimento" required>
+            </p>
+
+            <p>
+                <label for="email">E-mail:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="telefone">Telefone (DDD + Número + Ramal):</label><br>
+                <input type="tel" id="telefone" name="telefone" maxlength="14" required placeholder="(XX) XXXXXXXX">
+            </p>
+
+            <p>
+                <label for="serie">Série:</label><br>
+                <select name="serie" id="serie" required>
+                    <option value="">Selecione a série</option>
+                    <option value="1ano">1º ano do Ensino Médio</option>
+                    <option value="2ano">2º ano do Ensino Médio</option>
+                    <option value="3ano">3º ano do Ensino Médio</option>
+                    <option value="4ano">4º ano do Ensino Médio</option>
+                </select>
+            </p>
+
+            <p><strong>Turno Preferencial:</strong><br>
+                <input type="radio" id="manha" name="turno" value="manha" required>
+                <label for="manha">Manhã</label>
+                
+                <input type="radio" id="tarde" name="turno" value="tarde">
+                <label for="tarde">Tarde</label>
+                
+                <input type="radio" id="noite" name="turno" value="noite">
+                <label for="noite">Noite</label>
+            </p>
+
+            <p><strong>Atividades Extra-curriculares:</strong><br>
+                <input type="checkbox" id="teatro" name="extra" value="teatro">
+                <label for="teatro">Teatro</label>
+                
+                <input type="checkbox" id="musica" name="extra" value="musica">
+                <label for="musica">Música</label>
+                
+                <input type="checkbox" id="ballet" name="extra" value="ballet">
+                <label for="ballet">Ballet</label>
+                
+                <input type="checkbox" id="pintura" name="extra" value="pintura">
+                <label for="pintura">Pintura</label>
+                
+                <input type="checkbox" id="judo" name="extra" value="judo">
+                <label for="judo">Judô</label>
+                
+                <input type="checkbox" id="futebol" name="extra" value="futebol">
+                <label for="futebol">Futebol</label>
+            </p>
+
+            <p>
+                <button type="submit">Enviar Matrícula</button>
+                <button type="reset">Limpar Dados</button>
+            </p>
+
+        </fieldset>
+    </form>
+
+</body>
+</html>
