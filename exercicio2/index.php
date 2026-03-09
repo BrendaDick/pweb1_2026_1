@@ -1,19 +1,33 @@
+
 <?php
-#Exercício01
-echo "<h2>Página de Matrícula</h2>";
-echo "<p>Aqui será desenvolvido o formulário de matrícula.</p>";
-echo "<a href='index.php'>Voltar ao Menu</a>";
+#Exercicio01
+  $matricula = "Clique aqui para ver o Exercicio01";
+?>
+
+<a href="matricula.html"><?php echo $matricula; ?></a>
+
+<?php
+  echo '<a href="matricula.html">Matricula</a>';
 ?>
 
 <?php
-#Exercício02
-echo "<h2>Ficha Cadastral</h2>";
-echo "<p>Conteúdo da Ficha Cadastral em desenvolvimento...</p>";
-echo "<a href='index.php'>Voltar ao Menu</a>";
+#Exercicio02
+  $ficha = "Clique aqui para ver o Exercicio02";
+?>
+
+<a href="fichacentral.html"><?php echo $ficha; ?></a>
+
+<?php
+  echo '<a href="fichacentral.html">Matricula</a>';
 ?>
 
 <?php
-#Exercício03
-echo "<h2>Lista de Inscritos</h2>";
-echo "<a href='index.php'>Voltar ao Menu</a>";
+#Exercicio03
+  $lista = "Clique aqui para ver o Exercicio03";
+?>
+
+<a href="listainscrito.html"><?php echo $lista; ?></a>
+
+<?php
+  echo '<a href="listainscrito.html">Matricula</a>';
 ?>
