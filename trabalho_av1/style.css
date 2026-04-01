@@ -1,0 +1,469 @@
+/* --- VARIÁVEIS DE CORES (Logo: Vermelho e Cinza) --- */
+:root {
+    --vermelho-logo: #e30613; /* Vermelho vibrante */
+    --cinza-logo: #4a4a4a;   /* Cinza médio da logo */
+    --cinza-claro: #999696;  /* Cinza secundário */
+    --preto-card: #111111;   /* Fundo escuro para destacar o vermelho */
+}
+
+/* --- ESTILOS DO HEADER --- */
+.header-custom {
+    padding: 1.2rem 0;
+    border-bottom: 2px solid #eee;
+    background-color: #fff;
+}
+
+.nav-smart {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.nav-link-smart {
+    font-weight: 700;
+    color: #000 !important;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-link-smart:hover {
+    color: var(--vermelho-logo) !important; /* Hover agora é vermelho */
+}
+
+.btn-smart {
+    background-color: var(--vermelho-logo); 
+    color: #fff; /* Texto branco para melhor leitura no vermelho */
+    font-weight: 800;
+    border-radius: 50px;
+    padding: 10px 28px;
+    border: 2px solid var(--vermelho-logo);
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-smart:hover {
+    background-color: transparent;
+    color: var(--vermelho-logo);
+    transform: scale(1.05);
+}
+
+/* --- ESTILOS DO BANNER HERO --- */
+.hero-banner {
+    background: linear-gradient(135deg, #000 30%, var(--cinza-logo) 100%);
+    border-radius: 15px;
+    border-left: 10px solid var(--vermelho-logo); /* Detalhe lateral impactante */
+    overflow: hidden;
+    position: relative;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero-content {
+    padding: 4rem;
+    z-index: 2;
+}
+
+.hero-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    font-size: 3.5rem;
+}
+
+.hero-title .highlight {
+    color: var(--vermelho-logo); /* Texto de destaque em Vermelho */
+}
+
+.hero-accent {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: var(--vermelho-logo);
+    margin-left: 5px;
+}
+
+.hero-image-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 55%;
+    background: url('imagens/musculação.png') no-repeat center right;
+    background-size: cover;
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 1;
+    filter: saturate(1.3); /* Aumenta a cor da imagem lateral */
+}
+
+/* --- ESTILOS DAS MODALIDADES --- */
+.modality-card {
+    background-color: var(--preto-card);
+    color: #fff;
+    min-height: 280px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s ease;
+    border-bottom: 5px solid var(--cinza-logo); /* Base cinza */
+}
+
+.modality-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 5px solid var(--vermelho-logo); /* Muda para vermelho no hover */
+}
+
+.modality-content {
+    flex: 1;
+    padding: 2.5rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(90deg, var(--preto-card) 60%, transparent 100%);
+}
+
+.modality-title {
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.modality-card:hover .modality-title {
+    color: var(--vermelho-logo); /* Título brilha em vermelho no hover */
+}
+
+.modality-content p {
+    font-size: 0.9rem;
+    color: #bbb;
+    max-width: 260px;
+    margin-bottom: 1.5rem;
+}
+
+.modality-link {
+    color: var(--vermelho-logo);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--vermelho-logo);
+    align-self: flex-start;
+    padding-bottom: 2px;
+}
+
+.modality-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    filter: brightness(0.6) contrast(1.1); /* Tiramos o cinza, deixamos dramático */
+    transition: 0.5s;
+}
+
+.modality-card:hover .modality-img {
+    filter: brightness(0.8) scale(1.1); /* A imagem ganha vida no hover */
+}
+
+/* Ajustes de Responsividade */
+@media (max-width: 992px) {
+    .hero-title { font-size: 2.5rem; }
+    .hero-image-container { opacity: 0.3; width: 100%; clip-path: none; }
+}
+
+@media (max-width: 576px) {
+    .modality-content { background: rgba(0, 0, 0, 0.85); }
+    .modality-img { width: 100%; }
+}
+
+/* Regra para o Header Negro */
+.header-dark {
+    background-color: #000 !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+/* Força os links a ficarem brancos dentro do header negro */
+.header-dark .nav-link-smart {
+    color: #fff !important;
+}
+
+/* --- ESTILOS DA SEÇÃO PERFORMANCE --- */
+.performance-section {
+    background-color: #f8f9fa; /* Leve cinza para separar do branco do site */
+    position: relative;
+    overflow: hidden;
+}
+
+.perf-title {
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    color: #000;
+}
+
+.perf-text {
+    font-size: 1rem;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+/* Pontos de progresso (Vermelhos) */
+.perf-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+}
+
+.perf-dots .dot.active {
+    background-color: var(--vermelho-logo);
+}
+
+.perf-percentage {
+    color: var(--vermelho-logo);
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+/* Container da Imagem à direita */
+.perf-image-container {
+    padding-right: 50px;
+}
+
+.perf-athlete {
+    max-height: 550px;
+    filter: grayscale(100%); /* Mantém o atleta em P&B como na referência */
+    position: relative;
+    z-index: 2;
+}
+
+/* Número de fundo (Marca d'água) */
+.perf-bg-number {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15rem;
+    font-weight: 900;
+    color: #eaeaea;
+    z-index: 1;
+    font-family: Arial, sans-serif;
+}
+
+/* Gráfico de Barras sobreposto */
+.perf-graph-bars {
+    bottom: 50px;
+    right: 0;
+    z-index: 3;
+}
+
+.g-bar {
+    width: 12px;
+    background-color: #eee;
+    transition: 0.3s;
+    position: relative;
+}
+
+.g-bar.active {
+    background-color: var(--vermelho-logo);
+}
+
+.g-bar::after {
+    content: attr(data-percent);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: #888;
+}
+
+.g-bar.active::after {
+    color: var(--vermelho-logo);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .perf-title { font-size: 2rem; }
+    .perf-image-container { display: none; } /* Esconde a imagem em celulares para não travar o texto */
+}
+
+.img-col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* --- FOOTER HÍBRIDO --- */
+.footer-hybrid {
+    background-color: #fff; /* Fundo branco como solicitado */
+    border-top: 1px solid #dee2e6;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-container {
+    background-color: #f8f9fa; /* Fundo leve para os boxes */
+    min-height: 60px;
+    border-bottom: 2px solid #333;
+}
+
+/* As caixinhas vermelhas das TAGS */
+.tag-box {
+    background-color: #ff0000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: lowercase;
+}
+
+/* Caixas de conteúdo */
+.content-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #ddd;
+    color: #666;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 800;
+    font-size: 0.75rem;
+    transition: 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #ff0000;
+}
+
+.copy-text {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.siga-nos {
+    font-weight: 800;
+    font-size: 0.75rem;
+    margin-right: 10px;
+    color: #333;
+}
+
+/* Ícones em círculos como na imagem da Ironberg */
+.social-icons-circles {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons-circles a {
+    color: #555;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.social-icons-circles a:hover {
+    color: #ff0000;
+    transform: translateY(-2px);
+}
+
+/* Ajuste de flex para o centro ser maior */
+.flex-grow-2 {
+    flex-grow: 2;
+}
+
+/* --- ESTILO DA NEWSLETTER --- */
+.news-section {
+    background-color: #1a1a1a; /* Cinza bem escuro/preto conforme a foto */
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+/* A linha inclinada no topo (verde ou vermelha) */
+.news-top-bar {
+    height: 60px;
+    background-color: var(--vermelho-logo); /* Use a cor da sua logo */
+    width: 110%;
+    margin-left: -5%;
+    transform: rotate(-2deg); /* Inclinação da imagem */
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+
+.news-heading {
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.news-label {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Campo de e-mail branco e retangular */
+.news-input-field {
+    border-radius: 0;
+    border: none;
+    padding: 12px 15px;
+    height: 45px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Botão OK com borda */
+.btn-news-submit {
+    background-color: transparent;
+    color: var(--vermelho-logo);
+    border: 2px solid var(--vermelho-logo);
+    font-weight: bold;
+    padding: 0 25px;
+    height: 45px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.btn-news-submit:hover {
+    background-color: var(--vermelho-logo);
+    color: white;
+}
+
+/* Logo e Nome à direita */
+.news-brand-img {
+    max-height: 70px;
+    margin-bottom: 10px;
+}
+
+.news-brand-text {
+    color: var(--vermelho-logo);
+    font-weight: 900;
+    font-size: 1.8rem;
+    line-height: 0.9;
+}
+
+.news-brand-text span {
+    font-size: 1rem;
+    color: #444;
+    letter-spacing: 3px;
+}
