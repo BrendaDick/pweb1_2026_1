@@ -467,3 +467,384 @@
     color: #444;
     letter-spacing: 3px;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* Header & Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-matricula {
+    background-color: #e31b23; /* Vermelho BDV */
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Hero Section (Igual à Foto 1, Estilo Foto 2) */
+.hero-section {
+    height: 450px;
+    background: linear-gradient(45deg, rgba(0,0,0,0.8) 40%, transparent 80%), 
+                url('imagens/academia.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); /* Corte diagonal da Foto 1 */
+}
+
+.hero-content {
+    padding-left: 8%;
+}
+
+.title-bg {
+    font-size: 80px;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* Content Section */
+.content-section {
+    padding: 60px 8%;
+    text-align: right; /* Alinhamento da Foto 1 */
+}
+
+.content-section h2 {
+    font-size: 32px;
+    color: #000;
+}
+
+.content-section h3 {
+    font-size: 42px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #e31b23; /* Destaque em vermelho da Foto 2 */
+}
+
+.content-section p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Container dos Cards */
+.modalidades-grid {
+    padding: 40px 8% 80px;
+    background-color: #f4f4f4;
+}
+
+.container-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Estilo do Card Individual */
+.card {
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    border-bottom: 5px solid #e31b23; /* Detalhe vermelho inferior */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* Imagem do Card com Corte */
+.card-image {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); /* Corte diagonal sutil */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: scale 0.5s ease;
+}
+
+.card:hover .card-image img {
+    scale: 1.1;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+/* Informações do Card */
+.card-info {
+    padding: 25px;
+    text-align: left;
+}
+
+.card-info h4 {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Garante que todos ocupem a mesma altura na linha */
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    border-bottom: 5px solid #e31b23;
+}
+
+.card-info {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz a área de texto preencher o espaço restante */
+}
+
+.card-info p {
+    flex-grow: 1; /* Faz o parágrafo empurrar o botão para o rodapé do card */
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
+    height: auto; /* Garante que a altura seja automática */
+    overflow: visible; /* Garante que o texto apareça */
+}
+
+/* Botão Saiba Mais */
+.btn-saiba-mais {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    border: 1px solid #e31b23;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover .btn-saiba-mais {
+    background-color: #e31b23;
+    border-color: #e31b23;
+}
+
+/* --- ESTILO DA PÁGINA DE UNIDADES (ACADEMIAS) --- */
+
+.unidades-section {
+    padding: 60px 8%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.search-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+/* Barra de Busca Estilo Smart */
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    display: flex;
+    border: 2px solid #eeeeee;
+    border-radius: 50px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 50px 0 0 50px;
+}
+
+.btn-search {
+    background: none;
+    border: none;
+    padding-right: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Grid de Unidades */
+.unidades-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.unit-card {
+    width: 350px;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: left;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.unit-card:hover {
+    transform: translateY(-8px);
+    border-color: #e31b23; /* Borda vermelha no hover */
+}
+
+/* Imagem e Tag */
+.unit-img {
+    position: relative;
+    height: 190px;
+}
+
+.unit-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tag-promo {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: #e6fffa; 
+    color: #234e52;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Conteúdo Interno */
+.unit-content {
+    padding: 25px;
+}
+
+.unit-content h3 {
+    font-size: 24px;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.unit-content p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.link-view {
+    display: inline-block;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.link-view:hover {
+    text-decoration: underline;
+}
+
+/* Preços e Planos */
+.plans-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-top: 1px solid #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.plan-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-price span {
+    font-size: 11px;
+    font-weight: 800;
+    color: #999;
+    letter-spacing: 0.5px;
+}
+
+.plan-price strong {
+    font-size: 17px;
+    color: #000;
+    margin-top: 2px;
+}
+
+/* Botão de Ação */
+.btn-planos {
+    display: block;
+    width: 100%;
+    background-color: #e31b23; 
+    color: #000;
+    text-align: center;
+    padding:
+}
+
+    
