@@ -847,4 +847,62 @@ body {
     padding:
 }
 
+/* --- ESTILOS DA PÁGINA DE DETALHE --- */
+
+.info-box {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.info-box:hover {
+    border-color: #e30613;
+}
+
+.main-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border: 2px solid #f0f0f0;
+}
+
+.thumb {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.thumb.active, .thumb:hover {
+    opacity: 1;
+    border: 2px solid #e30613;
+}
+
+/* Botão de Ação Principal (Estilo BDV Force) */
+.btn-cta-unit {
+    background-color: #e30613; /* Amarelo Smart */
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 900;
+    border-radius: 50px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-cta-unit:hover {
+    background-color: #e30613; /* Vermelho BDV no hover */
+    color: #fff;
+}
+
+/* Cor Vermelha BDV para ícones e links */
+.text-danger {
+    color: #e30613 !important;
+}
+
     
