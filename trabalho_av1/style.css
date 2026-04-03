@@ -514,15 +514,14 @@ body {
 /* Hero Section (Igual à Foto 1, Estilo Foto 2) */
 .hero-section {
     height: 450px;
-    background: linear-gradient(45deg, rgba(0,0,0,0.8) 40%, transparent 80%), 
-                url('imagens/academia.jpg');
-    background-size: cover;
-    background-position: center;
+    /* Removemos a imagem e o gradiente, deixando apenas a cor preta */
+    background-color: #000 !important; 
     display: flex;
     align-items: center;
     position: relative;
     color: #fff;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); /* Corte diagonal da Foto 1 */
+    /* Mantive o corte diagonal que você já tinha */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); 
 }
 
 .hero-content {
@@ -861,26 +860,48 @@ body {
     border-color: #e30613;
 }
 
+/* --- LÓGICA DA GALERIA PURO CSS --- */
+
+/* Esconde todas as fotos por padrão */
 .main-img {
+    display: none; 
     width: 100%;
     height: 400px;
     object-fit: cover;
     border: 2px solid #f0f0f0;
+    border-radius: 16px;
 }
 
+/* Mostra a foto 1 se o rádio 1 estiver marcado, e assim por diante */
+#foto1:checked ~ .main-image-container .img1,
+#foto2:checked ~ .main-image-container .img2,
+#foto3:checked ~ .main-image-container .img3 {
+    display: block;
+}
+
+/* Estilo das miniaturas */
 .thumb {
     width: 80px;
     height: 60px;
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.5;
     transition: 0.3s;
+    border: 2px solid transparent;
 }
 
-.thumb.active, .thumb:hover {
+/* Efeito de hover e destaque da miniatura ativa via CSS */
+.thumb:hover {
     opacity: 1;
-    border: 2px solid #e30613;
+}
+
+#foto1:checked ~ .thumb-gallery label[for="foto1"] .thumb,
+#foto2:checked ~ .thumb-gallery label[for="foto2"] .thumb,
+#foto3:checked ~ .thumb-gallery label[for="foto3"] .thumb {
+    opacity: 1;
+    border: 2px solid #e30613; /* Sua cor vermelha da logo */
+    transform: scale(1.05);
 }
 
 /* Botão de Ação Principal (Estilo BDV Force) */
@@ -903,6 +924,63 @@ body {
 /* Cor Vermelha BDV para ícones e links */
 .text-danger {
     color: #e30613 !important;
+}
+
+/* --- AJUSTE PARA PLANOS IGUAIS --- */
+.plan-card {
+    border-radius: 15px;
+    background: #000;
+    transition: 0.3s;
+    border: 1px solid #333;
+    height: 100%; /* Garante que os cards tenham a mesma altura */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Removemos o aumento de tamanho (scale) para ficarem iguais */
+.featured-plan {
+    border: 2px solid var(--vermelho-logo) !important;
+    position: relative;
+    /* Removido o transform: scale(1.05) */
+}
+
+.plan-card .card-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.plan-card .card-info h4 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--vermelho-logo);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Garante que os ícones fiquem vermelhos como na imagem */
+.plan-card ul li i.fa-check {
+    color: var(--vermelho-logo) !important;
+}
+
+/* Estilo do botão "Selecionar" para o plano comum */
+.btn-outline-white {
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-outline-white:hover {
+    background: #fff;
+    color: #000;
 }
 
     
