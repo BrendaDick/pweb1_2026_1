@@ -6,7 +6,20 @@
     <title>BDV Force - Unidade Centro Comercial</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo para o mapa não ficar grudado */
+        #map {
+            height: 250px;
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 15px;
+            z-index: 1; /* Garante que o mapa não fique sobre o menu */
+        }
+    </style>
 </head>
 <body>
 
@@ -18,7 +31,6 @@
                         <img src="imagens/BDV logo.png" alt="BDV Force" style="height: 90px;">
                     </a>
                 </div>
-
                 <div class="col-lg-9 col-6 d-flex justify-content-end align-items-center">
                     <nav class="nav-smart d-none d-lg-flex">
                         <a class="nav-link-smart" href="index.html">Home</a>
@@ -26,10 +38,9 @@
                         <a class="nav-link-smart" href="planos.html">Planos</a>
                         <a class="nav-link-smart" href="sobre.html">Contato</a>
                     </nav>
-
                     <div class="d-flex align-items-center ms-2">
                         <a href="matricula.html" class="btn-smart">
-                            <i class="fa-solid fa-user"></i></i> Matricule-se
+                            <i class="fa-solid fa-user"></i> Matricule-se
                         </a>
                     </div>
                 </div>
@@ -87,6 +98,8 @@
                     <div>
                         <h5 class="fw-bold">Endereço</h5>
                         <p class="mb-1 text-muted">Rua das Flores, 123 - Centro, São Paulo - SP</p>
+                        
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
@@ -99,13 +112,11 @@
 <footer class="text-center py-4 text-muted border-top mt-5">
     <div class="container-fluid p-0">
         <div class="footer-container d-flex align-items-stretch">
-            
             <div class="content flex-grow-2 d-flex flex-column justify-content-center px-4">
                 <div class="copy-text">
                     &copy; 2026 BDV Force. Todos os direitos reservados.
                 </div>
             </div>
-
             <div class="content px-4">
                 <span class="siga-nos">SIGA-NOS:</span>
                 <div class="social-icons-circles">
@@ -113,10 +124,27 @@
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
             </div>
-
         </div>
     </div>
 </footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // Configura as coordenadas (São Paulo como exemplo)
+    // Para mudar o local, altere os números dentro de setView e marker
+    var lat = -23.5505; 
+    var lng = -46.6333;
+
+    var map = L.map('map').setView([lat, lng], 15);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([lat, lng]).addTo(map)
+        .bindPopup('BDV Force - Unidade Centro Comercial')
+        .openPopup();
+</script>
 
 </body>
 </html>
