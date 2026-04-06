@@ -837,13 +837,13 @@ body {
 }
 
 /* Botão de Ação */
-.btn-planos {
+.btn-cta-unit { /* ou o nome que você deu ao seu botão */
     display: block;
     width: 100%;
     background-color: #e31b23; 
-    color: #000;
+    color: #fff; /* Geralmente branco fica melhor no fundo vermelho */
     text-align: center;
-    padding:
+    padding: 15px; /* AGORA COM VALOR */
 }
 
 /* --- ESTILOS DA PÁGINA DE DETALHE --- */
