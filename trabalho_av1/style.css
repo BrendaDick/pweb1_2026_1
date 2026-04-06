@@ -1,9 +1,9 @@
 /* --- VARIÁVEIS DE CORES (Logo: Vermelho e Cinza) --- */
 :root {
-    --vermelho-logo: #e30613; /* Vermelho vibrante */
-    --cinza-logo: #4a4a4a;   /* Cinza médio da logo */
-    --cinza-claro: #999696;  /* Cinza secundário */
-    --preto-card: #111111;   /* Fundo escuro para destacar o vermelho */
+    --vermelho-logo: #e30613; 
+    --cinza-logo: #4a4a4a;   
+    --cinza-claro: #999696;  
+    --preto-card: #111111;   
 }
 
 /* --- ESTILOS DO HEADER --- */
@@ -29,12 +29,12 @@
 }
 
 .nav-link-smart:hover {
-    color: var(--vermelho-logo) !important; /* Hover agora é vermelho */
+    color: var(--vermelho-logo) !important; 
 }
 
 .btn-smart {
     background-color: var(--vermelho-logo); 
-    color: #fff; /* Texto branco para melhor leitura no vermelho */
+    color: #fff; 
     font-weight: 800;
     border-radius: 50px;
     padding: 10px 28px;
@@ -54,7 +54,7 @@
 .hero-banner {
     background: linear-gradient(135deg, #000 30%, var(--cinza-logo) 100%);
     border-radius: 15px;
-    border-left: 10px solid var(--vermelho-logo); /* Detalhe lateral impactante */
+    border-left: 10px solid var(--vermelho-logo); 
     overflow: hidden;
     position: relative;
     min-height: 450px;
@@ -114,7 +114,7 @@
 
 .modality-card:hover {
     transform: translateY(-10px);
-    border-bottom: 5px solid var(--vermelho-logo); /* Muda para vermelho no hover */
+    border-bottom: 5px solid var(--vermelho-logo); 
 }
 
 .modality-content {
@@ -165,7 +165,7 @@
     background-size: cover;
     background-position: center;
     z-index: 1;
-    filter: brightness(0.6) contrast(1.1); /* Tiramos o cinza, deixamos dramático */
+    filter: brightness(0.6) contrast(1.1); 
     transition: 0.5s;
 }
 
@@ -397,7 +397,7 @@
     color: white;
 }
 
-/* A linha inclinada no topo (verde ou vermelha) */
+/* A linha inclinada no topo */
 .news-top-bar {
     height: 60px;
     background-color: var(--vermelho-logo); /* Use a cor da sua logo */
@@ -511,7 +511,7 @@ body {
     font-size: 14px;
 }
 
-/* Hero Section (Igual à Foto 1, Estilo Foto 2) */
+/* Hero Section  */
 .hero-section {
     height: 450px;
     /* Removemos a imagem e o gradiente, deixando apenas a cor preta */
@@ -837,13 +837,13 @@ body {
 }
 
 /* Botão de Ação */
-.btn-cta-unit { /* ou o nome que você deu ao seu botão */
+.btn-cta-unit { 
     display: block;
     width: 100%;
     background-color: #e31b23; 
-    color: #fff; /* Geralmente branco fica melhor no fundo vermelho */
+    color: #fff; 
     text-align: center;
-    padding: 15px; /* AGORA COM VALOR */
+    padding: 15px; 
 }
 
 /* --- ESTILOS DA PÁGINA DE DETALHE --- */
@@ -941,7 +941,6 @@ body {
 .featured-plan {
     border: 2px solid var(--vermelho-logo) !important;
     position: relative;
-    /* Removido o transform: scale(1.05) */
 }
 
 .plan-card .card-info {
