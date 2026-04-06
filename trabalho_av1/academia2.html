@@ -7,17 +7,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilo para o mapa */
+        /* Estilo para o container do mapa */
         #map {
             height: 250px;
             width: 100%;
             border-radius: 15px;
             margin-top: 15px;
-            z-index: 1;
+            overflow: hidden; /* Garante que o iframe respeite o border-radius */
+            border: 1px solid #ddd;
+        }
+        #map iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
     </style>
 </head>
@@ -63,15 +67,15 @@
                 <input type="radio" name="galeria" id="foto3" class="d-none">
 
                 <div class="main-image-container">
-                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=500&q=60" class="img-fluid rounded-4 main-img img1" alt="Foto 1">
+                    <img src="imagens/academia3.jpg" class="img-fluid rounded-4 main-img img1" alt="Foto 1">
                     <img src="imagens/academia.jpg" class="img-fluid rounded-4 main-img img2" alt="Foto 2">
-                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=800&q=60" class="img-fluid rounded-4 main-img img3" alt="Foto 3">
+                    <img src="imagens/academia2.png" class="img-fluid rounded-4 main-img img3" alt="Foto 3">
                 </div>
 
                 <div class="thumb-gallery mt-3 d-flex gap-2">
-                    <label for="foto1"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=500&q=60" class="thumb"></label>
+                    <label for="foto1"><img src="imagens/academia3.jpg" class="thumb"></label>
                     <label for="foto2"><img src="imagens/academia.jpg" class="thumb"></label>
-                    <label for="foto3"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=800&q=60" class="thumb"></label>
+                    <label for="foto3"><img src="imagens/academia2.png" class="thumb"></label>
                 </div>
             </div>
 
@@ -101,7 +105,11 @@
                             <h5 class="fw-bold">Endereço</h5>
                             <p class="mb-1 text-muted">Av. Paulista, 1500 - Bela Vista, São Paulo - SP</p>
                             
-                            <div id="map"></div>
+                            <div id="map">
+                                <iframe 
+                                    src="https://www.openstreetmap.org/export/embed.html?bbox=-46.6585%2C-23.5630%2C-46.6533%2C-23.5600&amp;layer=mapnik&amp;marker=-23.5615%2C-46.6559">
+                                </iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -111,41 +119,24 @@
         </div>
     </main>
 
-  <footer class="text-center py-4 text-muted border-top mt-5">
-    <div class="container-fluid p-0">
-        <div class="footer-container d-flex align-items-stretch">
-            <div class="content flex-grow-2 d-flex flex-column justify-content-center px-4">
-                <div class="copy-text">
-                    &copy; 2026 BDV Force. Todos os direitos reservados.
+    <footer class="text-center py-4 text-muted border-top mt-5">
+        <div class="container-fluid p-0">
+            <div class="footer-container d-flex align-items-stretch">
+                <div class="content flex-grow-2 d-flex flex-column justify-content-center px-4">
+                    <div class="copy-text">
+                        &copy; 2026 BDV Force. Todos os direitos reservados.
+                    </div>
                 </div>
-            </div>
-            <div class="content px-4">
-                <span class="siga-nos">SIGA-NOS:</span>
-                <div class="social-icons-circles">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <div class="content px-4">
+                    <span class="siga-nos">SIGA-NOS:</span>
+                    <div class="social-icons-circles">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-    // Coordenadas aproximadas da Av. Paulista, 1500
-    var lat = -23.5615;
-    var lng = -46.6559;
-
-    var map = L.map('map').setView([lat, lng], 16);
-
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    L.marker([lat, lng]).addTo(map)
-        .bindPopup('<b>BDV Force</b><br>Unidade Avenida Paulista')
-        .openPopup();
-</script>
+    </footer>
 
 </body>
 </html>
