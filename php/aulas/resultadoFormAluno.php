@@ -10,6 +10,7 @@
     echo"<p>".$_POST['nome'] . "</p>";
     echo"<p>".$_POST['email'] . "</p>";
     echo"<p>".$_POST['telefone'] . "</p>";
+    echo"<p>".$_POST['senha'] . "</p>";
      ?>
 
 </div>
