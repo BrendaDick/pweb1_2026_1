@@ -55,6 +55,13 @@
 
         echo $carro['modelo'] . " - " . $carro['cor'];
 
+        foreach($carros as $carro){
+            echo "<br";
+            foreach ($carro as $item){
+                echo "Modelo: " . $item['modelo'] . "Ano" . $item['ano'];
+            }
+        }
+
 
 
 
