@@ -3,11 +3,11 @@
 class db
 {
 
-    private $host = 'localhost';
-    private $user = 'root';
+    private $host     = 'localhost';
+    private $user     = 'root';
     private $password = '';
-    private $port = '3306';
-    private $dbname = 'db_pweb1_2026_1';
+    private $port     = '3306';
+    private $dbname   = 'db_pweb1_2026_1';
     private $table_name;
     private $conn; // conexão fica guardada para reutilizar
 
@@ -33,7 +33,18 @@ class db
             die('Erro na conexão: ' . $e->getMessage());
         }
     }
-    //INSERT INTO tabela (campo1, campo2) VALUES (?, ?);
+
+    //SELECT * FROM tabela
+    public function all()
+    {
+        $sql = "SELECT * FROM $this->table_name";
+        $st = $this->conn->prepare($sql);
+        $st->execute();
+
+        return $st->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    //INSERT INTO tabela ('campo1', 'campo2') VALUES (?, ?);
     public function store($dados)
     {
         $campos = "";
@@ -48,14 +59,25 @@ class db
             $sep = ",";
         }
         $sql = "INSERT INTO $this->table_name ($campos) VALUES ($marcadores);";
-       // var_dump($sql);
-       // exit;
+
+        //codigo para debugar algum erro
+        // var_dump($sql, $dados);
+        // exit;
         try {
             $st = $this->conn->prepare($sql);
             $st->execute($vetorData);
         } catch (PDOException $e) {
-            var_dump("Erro ao inserir", $e->getMessage());
+            throw new Exception("Erro ao inserir: ", $e->getMessage());
         }
     }
+}
 
+//SELECT * FROM tabela WHERE campo like "%valor%"
+public function search ($dados)
+{
+    $campo = $dados['tipo'];
+    $valor = $dados['valor'];
+
+    $sql = "SELECT * FROM $this->table_name WHERE $campo LIKE ?";
+    
 }
